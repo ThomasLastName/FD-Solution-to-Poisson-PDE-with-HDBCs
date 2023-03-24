@@ -8,6 +8,7 @@ from scipy import sparse as sp
 from scipy.sparse.linalg import use_solver  # optional
 from scipy.sparse.linalg import spsolve as solve
 
+%matplotlib notebook
 
 
 def Holt(m):        # named for the guy who showed me how to correctly use the Kronecker product
@@ -53,7 +54,7 @@ def PrintMat(mat, roun=4, tab=None):  # still, one of my better works, and one o
 
 def BasicSurf(x, y, z):     # z is a len(x)-by-len(y) matrix where z[i,j] = f(x[i],x[j])
     fig = go.Figure(go.Surface(x=x, y=y, z=z))
-    fig.show()
+    fig.show(renderer="colab")
 
 
 #

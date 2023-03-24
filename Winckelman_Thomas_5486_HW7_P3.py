@@ -1,7 +1,8 @@
 
 
 import numpy as np
-import plotly.graph_objects as go
+#import plotly.graph_objects as go
+#import plotly.express as go
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from scipy import sparse as sp
@@ -152,9 +153,10 @@ ax.set_xlabel('$\ln(N)$ (With $N$ Defined as in the Statement of the Algorithm)'
 ax.set_ylabel('$\ln(|u_h(0.5,0.5)-u(0.5,0.5)|)$')
 ax.set_title('log-log: Absolute Error at the Point $(0.5,0.5)$ Against $N$')
 ax.grid()
-#plt.show()
-plugins.connect(fig, tooltip)
-mpld3.display()
+plt.show()
+# Supposedly, replacing plt.show() by the following two lines will let you reproduce images in Colab, but I can't make it work (source: https://stackoverflow.com/questions/52859983/interactive-matplotlib-figures-in-google-colab)
+# plugins.connect(fig, tooltip)
+# mpld3.display()
 
 
 for j in range(3,11):

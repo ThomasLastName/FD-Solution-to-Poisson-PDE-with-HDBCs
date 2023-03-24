@@ -2,14 +2,14 @@
 
 import numpy as np
 #import plotly.graph_objects as go
-#import plotly.express as go
+import plotly.express as go
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 from scipy import sparse as sp
 from scipy.sparse.linalg import use_solver  # optional
 from scipy.sparse.linalg import spsolve as solve
-import mpld3
-from mpld3 import plugins
+#import mpld3
+#from mpld3 import plugins
 
 
 def Holt(m):        # named for the guy who showed me how to correctly use the Kronecker product

@@ -8,8 +8,6 @@ from scipy import sparse as sp
 from scipy.sparse.linalg import use_solver  # optional
 from scipy.sparse.linalg import spsolve as solve
 
-%matplotlib notebook
-
 
 def Holt(m):        # named for the guy who showed me how to correctly use the Kronecker product
     M = m**2

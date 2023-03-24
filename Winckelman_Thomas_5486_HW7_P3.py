@@ -7,6 +7,8 @@ from tqdm import tqdm
 from scipy import sparse as sp
 from scipy.sparse.linalg import use_solver  # optional
 from scipy.sparse.linalg import spsolve as solve
+import mpld3
+from mpld3 import plugins
 
 
 def Holt(m):        # named for the guy who showed me how to correctly use the Kronecker product
@@ -52,7 +54,7 @@ def PrintMat(mat, roun=4, tab=None):  # still, one of my better works, and one o
 
 def BasicSurf(x, y, z):     # z is a len(x)-by-len(y) matrix where z[i,j] = f(x[i],x[j])
     fig = go.Figure(go.Surface(x=x, y=y, z=z))
-    fig.show(renderer="colab")
+    fig.show()
 
 
 #
@@ -163,3 +165,8 @@ for j in range(3,11):
 
 
 
+tooltip = plugins.PointHTMLTooltip(points[0], labels,
+                                   voffset=10, hoffset=10, css=css)
+plugins.connect(fig, tooltip)
+
+mpld3.display()

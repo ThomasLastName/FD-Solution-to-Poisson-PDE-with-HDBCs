@@ -152,7 +152,9 @@ ax.set_xlabel('$\ln(N)$ (With $N$ Defined as in the Statement of the Algorithm)'
 ax.set_ylabel('$\ln(|u_h(0.5,0.5)-u(0.5,0.5)|)$')
 ax.set_title('log-log: Absolute Error at the Point $(0.5,0.5)$ Against $N$')
 ax.grid()
-plt.show()
+#plt.show()
+plugins.connect(fig, tooltip)
+mpld3.display()
 
 
 for j in range(3,11):
@@ -163,10 +165,3 @@ for j in range(3,11):
                 )[1], tab=4
             )
 
-
-
-tooltip = plugins.PointHTMLTooltip(points[0], labels,
-                                   voffset=10, hoffset=10, css=css)
-plugins.connect(fig, tooltip)
-
-mpld3.display()
